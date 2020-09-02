@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <link href="styles/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Teko:wght@300&display=swap" rel="stylesheet">
+<style>
+
+
+    h1 {
+        font-family: 'Holtwood One SC', serif;
+        font-size: 50px
+}
+    li, p {
+        font-family: 'Teko', sans-serif;
+        font-size: 35px
+    }
+    
+body {
+  width: 1300px;
+  margin: 0 auto;
+  background-color: #009f85;
+  padding: 0 50px 50px 50px;
+  border: 30px solid black;
+  text-align: center;
+
+}
+h1 {
+  margin: 0 auto;
+  padding: 50px 500;    
+  color: #000203;
+  text-shadow: 2.5px 2.5px 1px black;
+  text-align:center;
+}
+div.align {
+    text-align: center;
+}
+
+  
+</style>
+
+  <body>
+      <h1>Introduction to Alison Manning</h1>
+      <div class="align">
+      <img src="images/img.one.jpeg" alt="About me Photo" width="500" height="600">
+      </div>
+
+  
+      
+    <p style="color:#e7edf1";>Thank you for visiting my first website. I'm very excited to expand my knowledge with Digital Crafts this August.</p>
+      <p>Here's a few things about me:</p>
+
+      <ul>
+          <li>I am a beginner to coding! During quarantine, I started taking a few free classes to assess my interest. I loved it!</li>
+          <li>This is the first website I have built. It definitely showcases my humble beginnings, I can't wait to learn more.</li>
+          <li>While working my last few weeks at the gym, I was instructing members on a new exercise called the "scorpion", I kept calling it the "python". If you're wondering where my head really is, it's deep into Zed Shaw's 'Learn Python the Hard Way'.</li>
+      </ul>
+
+      <p> 
+          <marquee>For a surprise, click on my photo to watch it change to a picture of me with an elephant!</marquee>
+      </p>
+      
+
+      
+      <a href="https://www.digitalcrafts.com">Click here to start your journey in coding</a>
+
+        <h1>Thank you for checking it out!</h1>
+        
+        <button>Change user</button>
+    <script>
+        alert("ALERT: This website was made by a rookie")
+
+        document.querySelector('html').onclick = function() {
+    alert('Ouch! Stop poking me!');
+}
+
+let myImage = document.querySelector('img');
+
+myImage.onclick = function() {
+    let mySrc = myImage.getAttribute('src');
+    if(mySrc === 'images/ephoto.jpeg') {
+      myImage.setAttribute ('src','images/ephoto.jpeg');
+    } else {
+      myImage.setAttribute ('src','images/ephoto.jpeg');
+    }
+}
+let myButton = document.querySelector('button');
+let myHeading = document.querySelector('h1');
+function setUserName() {
+  let myName = prompt('Please enter your name.');
+  localStorage.setItem('name', myName);
+  myHeading.textContent = 'Hi, and welcome to my first website, '  + myName;
+}
+if(!localStorage.getItem('name')) {
+  setUserName();
+} else {
+  let storedName = localStorage.getItem('name');
+  myHeading.textContent = 'Hi, and welcome to my first website, ' + storedName;
+}
+myButton.onclick = function() {
+  setUserName();
+}
+function setUserName() {
+  let myName = prompt('Please enter your name.');
+  if(!myName) {
+    setUserName();
+  } else {
+    localStorage.setItem('name', myName);
+    myHeading.innerHTML = 'Hi, and welcome to my first website, '  + myName;
+  }
+}
+
+
+
+
+
+
+    
+
+
+     
+
+
+
+
+
+     </script>
+
+
+      
+
+  </body>
+</html> 
